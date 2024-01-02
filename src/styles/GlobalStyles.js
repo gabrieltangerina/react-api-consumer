@@ -28,6 +28,12 @@ export default createGlobalStyle`
     font-size: 15px;
     font-weight: bold;
     color: #fff;
+    transition: all .2s;
+
+    &:hover{
+      filter: brightness(80%);
+    }
+
   }
 
   a{

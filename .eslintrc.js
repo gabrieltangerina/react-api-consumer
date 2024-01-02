@@ -31,5 +31,6 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": 0,
     "jsx-a11y/control-has-associated-label": 0,
     "default-param-last": 0,
+    "react/jsx-no-bind": 0,
   },
 };
