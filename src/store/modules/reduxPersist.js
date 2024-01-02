@@ -4,10 +4,10 @@ import { persistReducer } from "redux-persist";
 export default (reducers) => {
   const persistedReducers = persistReducer(
     {
-      key: "NOME-DA-APLICACAO",
+      key: "REACT-API-CONSUMER",
       storage,
       // Recebe o nome do reducer, o nome dele está no rootReducer
-      whitelist: ["exampleReducer"],
+      whitelist: ["auth"],
     },
     reducers
   );

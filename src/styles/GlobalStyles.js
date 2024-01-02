@@ -55,5 +55,6 @@ export const Container = styled.section`
 
   h1 {
     text-align: center;
+    margin-bottom: 10px;
   }
 `;
