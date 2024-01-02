@@ -3,10 +3,10 @@ import React from "react";
 import { Title } from "./styled";
 import { Container } from "../../styles/GlobalStyles";
 
-export default function Login() {
+export default function Register() {
   return (
     <Container>
-      <Title>Página de Login</Title>
+      <Title>Página de Register</Title>
     </Container>
   );
 }

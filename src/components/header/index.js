@@ -17,10 +17,10 @@ export default function Header() {
       <Link to="/">
         <FaHome size={20} />
       </Link>
-      <Link to="/login">
+      <Link to="/register">
         <FaUserAlt size={20} />
       </Link>
-      <Link to="/logout">
+      <Link to="/login">
         <FaSignInAlt size={20} />
       </Link>
       {botaoClicado ? "Clicado" : "Não clicado"}

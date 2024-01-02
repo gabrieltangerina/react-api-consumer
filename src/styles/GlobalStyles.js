@@ -37,15 +37,10 @@ export default createGlobalStyle`
   ul{
     list-style: none;
   }
-
-  /* Altera as mensagens (react-toastify) */
-  /* body .Toastify .Toastify__toast-container .Toastify__toast--success{
-    background-color: ${colors.detailsColor} ;
-  } */
 `;
 
 export const Container = styled.section`
-  max-width: 360px;
+  max-width: 460px;
   background: ${colors.primaryColor};
   margin: 30px auto;
   padding: 10px;
