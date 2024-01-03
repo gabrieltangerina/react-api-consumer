@@ -30,9 +30,6 @@ function persistRehydrate({ payload }) {
   const authState = get(payload, "auth", {});
   const token = get(authState, "token", "");
 
-  console.log("authState", authState);
-  console.log("token", token);
-
   if (!token) return;
   axios.defaults.headers.Authorization = `Bearer ${token}`;
 }
