@@ -20,3 +20,38 @@ export function loginFailure(payload) {
     payload,
   };
 }
+
+export function registerRequest(payload) {
+  return {
+    type: types.REGISTER_REQUEST,
+    payload,
+  };
+}
+
+export function registerFailure(payload) {
+  return {
+    type: types.REGISTER_FAILURE,
+    payload,
+  };
+}
+
+export function registerUpdatedSuccess(payload) {
+  return {
+    type: types.REGISTER_UPDATED_SUCCESS,
+    payload,
+  };
+}
+
+export function registerUpdatedPasswordInvalid(payload) {
+  return {
+    type: types.REGISTER_UPDATED_PASSWORD_INVALID,
+    payload,
+  };
+}
+
+export function registerCreatedSuccess(payload) {
+  return {
+    type: types.REGISTER_CREATED_SUCCESS,
+    payload,
+  };
+}
