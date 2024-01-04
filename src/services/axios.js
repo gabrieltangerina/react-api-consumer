@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://34.95.148.197",
+  baseURL: "http://35.199.91.221",
 });
