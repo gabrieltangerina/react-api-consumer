@@ -26,7 +26,7 @@ export default function Fotos() {
         setIsLoading(true);
 
         const { data } = await axios.get(`/alunos/${userId}`);
-        setFoto(data.Fotos[0].url);
+        setFoto(get(data, "Fotos[0].url", ""));
 
         setIsLoading(false);
       } catch (error) {
