@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import * as colors from "../../config/colors";
 
 export const AlunoContainer = styled.div`
@@ -30,4 +31,9 @@ export const ProfilePicture = styled.div`
     height: 36px;
     border-radius: 50%;
   }
+`;
+
+export const NovoAluno = styled(Link)`
+  padding: 20px 0 10px 0;
+  margin: 10px;
 `;

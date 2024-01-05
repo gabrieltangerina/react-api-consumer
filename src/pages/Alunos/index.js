@@ -9,7 +9,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
-import { AlunoContainer, ProfilePicture } from "./styled";
+import { AlunoContainer, ProfilePicture, NovoAluno } from "./styled";
 import { Container } from "../../styles/GlobalStyles";
 import axios from "../../services/axios";
 import Loading from "../../components/Loading";
@@ -64,6 +64,9 @@ export default function Alunos() {
   return (
     <Container>
       <h1>Página de Alunos</h1>
+
+      <NovoAluno to="/aluno/">Adicionar aluno</NovoAluno>
+
       <AlunoContainer>
         <Loading isLoading={isLoading} />
         {alunos.map((aluno, index) => (
