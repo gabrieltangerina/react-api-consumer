@@ -19,6 +19,7 @@ export default function Fotos() {
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [foto, setFoto] = React.useState("");
+  const [formDataState, setFormData] = React.useState(new FormData());
 
   useEffect(() => {
     const getData = async () => {
@@ -26,12 +27,12 @@ export default function Fotos() {
         setIsLoading(true);
 
         const { data } = await axios.get(`/alunos/${userId}`);
-        setFoto(get(data, "Fotos[0].url", ""));
+        // Para pegar a última foto
+        setFoto(get(data, `Fotos[${data.Fotos.length - 1}].url`, ""));
 
         setIsLoading(false);
       } catch (error) {
         toast.error("Erro ao obter a imagem");
-        console.log(error);
         setIsLoading(false);
         history.push("/");
       }
@@ -49,11 +50,16 @@ export default function Fotos() {
     const formData = new FormData();
     formData.append("aluno_id", userId);
     formData.append("foto", file);
+    setFormData(formData);
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
 
     try {
       setIsLoading(true);
 
-      await axios.post("/fotos/", formData, {
+      await axios.post("/fotos/", formDataState, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -74,13 +80,13 @@ export default function Fotos() {
 
   return (
     <Container>
-      <h1>Página de Fotos {userId} </h1>
+      <h1>Página de Fotos</h1>
       <Form>
         <label htmlFor="foto">
           {foto ? <img src={foto} alt="Foto" crossOrigin="" /> : "Selecionar"}
           <input type="file" id="foto" onChange={handleChange} />
         </label>
-        <button type="submit">
+        <button type="submit" onClick={handleClick}>
           {isLoading ? <Loading isLoading={isLoading} /> : "Adicionar foto"}
         </button>
       </Form>

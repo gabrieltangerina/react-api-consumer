@@ -73,7 +73,11 @@ export default function Alunos() {
           <div key={String(aluno.id)}>
             <ProfilePicture>
               {get(aluno, "Fotos[0].url", false) ? (
-                <img crossOrigin="" src={aluno.Fotos[0].url} alt="" />
+                <img
+                  crossOrigin=""
+                  src={aluno.Fotos[aluno.Fotos.length - 1].url}
+                  alt=""
+                />
               ) : (
                 <FaUserCircle size={36} />
               )}
